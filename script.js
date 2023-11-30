@@ -1,7 +1,7 @@
 /*
 
 // Function to fetch API key
-async function getAipKey() {
+async function getApiKey() {
   // Fetch API key from the specified URL using a POST request
   const response = await fetch("https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys", {
     method: 'POST'
@@ -30,7 +30,7 @@ async function getApi(data) {
 }
 
 // Initiates the process by calling the getAipKey function
-getAipKey();
+getApiKey();
 
 */
 
