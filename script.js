@@ -137,9 +137,9 @@ const PlanetaryOverlayModule = (function () {
   
     // Exposing functions to the outside world
     return {
-      createPlanetOverlay,
-      openOverlay,
-      closeOverlay
+        createPlanetOverlay,
+        openOverlay,
+        closeOverlay
     };
   })();
   
@@ -383,17 +383,17 @@ const PlanetaryOverlayModule = (function () {
       });
     });
   
-    // Attaching click event listener to the close button
     const closeBtn = document.querySelector(".close-btn");
-    closeBtn.addEventListener("click", () => {
-      // Closing the active overlay when the close button is clicked
-      const activeOverlay = document.querySelector(
-        '.planet-overlay[style*="display: block"]'
-      );
-      const overlayId = activeOverlay ? activeOverlay.id : null;
-      if (overlayId) {
-        PlanetaryOverlayModule.closeOverlay(overlayId);
-      }
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        const activeOverlay = document.querySelector(
+          '.planet-overlay[style*="display: block"]'
+        );
+        const overlayId = activeOverlay ? activeOverlay.id : null;
+        if (overlayId) {
+          PlanetaryOverlayModule.closeOverlay(overlayId);
+        }
+      });
+    }
   });
   
