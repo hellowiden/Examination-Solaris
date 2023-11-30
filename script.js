@@ -1,3 +1,41 @@
+/*
+
+// Function to fetch API key
+async function getAipKey() {
+  // Fetch API key from the specified URL using a POST request
+  const response = await fetch("https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys", {
+    method: 'POST'
+  });
+
+  // Extract JSON data from the response
+  const data = await response.json();
+  
+  // Log the retrieved data
+  console.log(data);
+
+  // Call the getApi function and pass the retrieved key
+  getApi(data.key);
+}
+
+// Function to make a GET request using the provided key
+async function getApi(data) {
+  // Fetch data from the specified URL using a GET request
+  let resp = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+    method: 'GET',
+    headers: { 'x-zocom': `${data}` }
+  });
+
+  // Log the response object
+  console.log(resp);
+}
+
+// Initiates the process by calling the getAipKey function
+getAipKey();
+
+*/
+
+
+
 const PlanetaryOverlayModule = (function () {
     // Function to create a planet overlay with provided data
     function createPlanetOverlay(planetData) {
