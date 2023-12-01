@@ -1,6 +1,4 @@
 // Overlay functionality
-
-// Overlay functionality
 function openOverlay(overlayId) {
   var overlay = document.getElementById(overlayId);
   overlay.style.display = 'flex';
@@ -22,7 +20,9 @@ async function getApiKey() {
     });
 
     // Check if the response is successful (status code 200-299)
-    if (!response.ok) throw new Error('Failed to fetch API key');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch API key. Status: ${response.status}`);
+    }
 
     // Extract JSON data from the response
     const data = await response.json();
@@ -31,7 +31,8 @@ async function getApiKey() {
     console.log('Retrieved API key:', data.key);
 
     // Call the fetchDataWithKey function and pass the retrieved key
-    await fetchDataWithKey('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', data.key, processData);
+    return data.key;
+
   } catch (error) {
     // Handle errors during the API key fetching process
     console.error('Error fetching API key:', error.message);
@@ -45,16 +46,55 @@ async function fetchDataWithKey(dataEndpoint, key, callback) {
     const response = await fetch(dataEndpoint, { method: 'GET', headers: { 'x-zocom': `${key}` } });
 
     // Check if the response is successful (status code 200-299)
-    if (!response.ok) throw new Error('Failed to fetch data');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    }
 
     // Log the response object
     const data = await response.json();
 
     // Call the callback function with the fetched data
     callback(data);
+
+    return data;
+
   } catch (error) {
     // Handle errors during the data fetching process
     console.error('Error fetching data:', error.message);
+  }
+}
+
+// Function to open overlay and display data
+async function openOverlayAndDisplayData(overlayId) {
+  try {
+    // Fetch data from the API
+    const apiKey = await getApiKey();
+
+    // Check if the API key is available
+    if (apiKey) {
+      // Fetch data using the retrieved API key
+      const data = await fetchDataWithKey('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', apiKey, processData);
+
+      // Log the fetched data if needed
+      console.log('Fetched data:', data);
+
+      // Check if the data is available and has the expected structure
+      if (data && typeof data === 'object') {
+        // Open the overlay
+        openOverlay(overlayId);
+
+        // Display data in the overlay
+        displayDataInOverlay(data, overlayId);
+      } else {
+        // Handle the case where the data is not as expected
+        console.error('Invalid data format:', data);
+      }
+    } else {
+      // Handle the case where the API key is not available
+      console.error('API key is not available');
+    }
+  } catch (error) {
+    console.error('Error:', error);
   }
 }
 
@@ -81,7 +121,7 @@ function displayDataInOverlay(data, overlayId) {
   // Check if the data is available and has the expected structure
   if (data && typeof data === 'object') {
     // Replace the content of the overlay with the dynamically generated HTML
-    overlay.innerHTML = createHTMLFromData(data);
+    overlay.innerHTML = createHTMLFromData(data, overlayId);
   } else {
     // Handle the case where the data is not as expected
     console.error('Invalid data format:', data);
@@ -89,7 +129,7 @@ function displayDataInOverlay(data, overlayId) {
 }
 
 // Function to create HTML content from the fetched data
-function createHTMLFromData(data) {
+function createHTMLFromData(data, overlayId) {
   return `
     <div class="overlay-content">
       <div class="container">
@@ -110,18 +150,18 @@ function createHTMLFromData(data) {
           </div>
           <div class="group group3">
             <h3>MAX TEMPERATUR</h3>
-            <p>${data.temp.day}°C</p>
+            <p>${data.temp ? `${data.temp.day}°C` : 'N/A'}</p>
           </div>
           <div class="group group4">
             <h3>MIN TEMPERATUR</h3>
-            <p>${data.temp.night}°C</p>
+            <p>${data.temp ? `${data.temp.night}°C` : 'N/A'}</p>
           </div>
 
           <div class="brake-2"></div>
 
           <div class="group group5">
             <h3>MÅNAR</h3>
-            <p>${data.moons.length > 0 ? data.moons.join(', ') : 'No moons'}</p>
+            <p>${data.moons && data.moons.length > 0 ? data.moons.join(', ') : 'No moons'}</p>
           </div>
         </div>
       </div>
