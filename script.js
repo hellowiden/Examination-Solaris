@@ -1,11 +1,11 @@
 // Overlay functionality
 function openOverlay(overlayId) {
-  var overlay = document.getElementById(overlayId);
+  const overlay = document.getElementById(overlayId);
   overlay.style.display = 'flex';
 }
 
 function closeOverlay(overlayId) {
-  var overlay = document.getElementById(overlayId);
+  const overlay = document.getElementById(overlayId);
   overlay.style.display = 'none';
 }
 
