@@ -83,8 +83,10 @@ async function openOverlayAndDisplayData(overlayId) {
         // Open the overlay
         openOverlay(overlayId);
 
+        const filterByIdResult = filterById(data, overlayId);
+
         // Display data in the overlay
-        displayDataInOverlay(data, overlayId);
+        displayDataInOverlay(filterByIdResult, overlayId);
       } else {
         // Handle the case where the data is not as expected
         console.error('Invalid data format:', data);
@@ -97,6 +99,7 @@ async function openOverlayAndDisplayData(overlayId) {
     console.error('Error:', error);
   }
 }
+
 
 // Function to process and print the fetched data
 function processData(data) {
@@ -126,6 +129,18 @@ function displayDataInOverlay(data, overlayId) {
     // Handle the case where the data is not as expected
     console.error('Invalid data format:', data);
   }
+}
+
+function filterById(data, id) {
+// denna fungerar endast om listan är nummerårdning
+  var dataZ = data.bodies.find(dataZ => dataZ.id === id);
+  console.log(dataZ);
+
+  console.log(data.bodies)
+  console.log(data.bodies[0])
+
+  return data.bodies[id];
+ 
 }
 
 // Function to create HTML content from the fetched data

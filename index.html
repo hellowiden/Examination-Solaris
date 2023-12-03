@@ -17,250 +17,75 @@
 
 <section class="solar__system">
     
-    <div class="planet sun"></div>
+    <div class="planet-overlay" id="0"></div>
 
-    <a href="#" class="planet sun" onclick="openOverlay('sun-overlay')">
+    <a href="#" class="planet sun" onclick="openOverlayAndDisplayData('0')">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
           <circle cx="7" cy="7" r="7" fill="#FFD700" />
         </svg>
     </a>
 
     <!-- Mercury Overlay -->
-    <div class="planet-overlay" id="mercury-overlay">
-
+    <div class="planet-overlay" id="1">
+        
     </div>
 
-    <a href="#" class="planet mercury" onclick="openOverlayAndDisplayData('mercury-overlay')">
+    <a href="#" class="planet mercury" onclick="openOverlayAndDisplayData('1')">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <circle cx="7" cy="7" r="7" fill="#888888"/>
         </svg>
     </a>
 
     <!-- Venus Overlay -->
-    <div class="planet-overlay" id="venus-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Venus</h1>
-                    <h2>Venus</h2>
-                    <p>Venus har nästan samma storlek som jorden (0,815 jordmassor). Venus är även på många andra sätt lik jorden då den har en tjock atmosfär och en rotationstid som liknar jordens.</p>
+    <div class="planet-overlay" id="2">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>40 075 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>10,820,000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>430°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-173°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>No moons</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('venus-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet venus" onclick="openOverlay('venus-overlay')">
+    <a href="#" class="planet venus" onclick="openOverlayAndDisplayData('2')">
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
             <circle cx="13" cy="13" r="13" fill="#E7CDCD"/>
         </svg>
     </a>
 
     <!-- Earth Overlay -->
-    <div class="planet-overlay" id="earth-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>JORDEN</h1>
-                    <h2>TELLUS</h2>
-                    <p>Jorden är den största och mest kompakta av de inre planeterna. Jorden är den enda av planeterna som konstaterats ha geologisk aktivitet och är även den enda planeten som med säkerhet härbärgerar liv. Dess flytande hydrosfär är unik bland stenplaneterna och jorden är också den enda planeten hos vilken plattektonik har observerats. Jordens atmosfär skiljer sig markant från de andra planeternas, vilket förklaras av att närvaron av levande organismer har förändrat atmosfären till att innehålla fritt syre, i dag motsvarande 21 procent.</p>
+    <div class="planet-overlay" id="3">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>40 075 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>149,600,000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>60°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-50°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Månen</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('earth-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet earth" onclick="openOverlay('earth-overlay')">
+    <a href="#" class="planet earth" onclick="openOverlayAndDisplayData('3')">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
             <circle cx="14" cy="14" r="14" fill="#428ED5"/>
         </svg>
     </a>
 
     <!-- Mars Overlay -->
-    <div class="planet-overlay" id="mars-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Mars</h1>
-                    <h2>Mars</h2>
-                    <p>Mars är den fjärde planeten från solen och solsystemets näst minsta planet. Den har fått sitt namn efter den romerska krigsguden Mars och är känd för sina röda ytor, som kommer från järnoxid (rost) på dess yta.</p>
+    <div class="planet-overlay" id="4">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>21 344 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>55 758 006 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>-60°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-140°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Phobos, Deimos</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('mars-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet mars" onclick="openOverlay('mars-overlay')">
+    <a href="#" class="planet mars" onclick="openOverlayAndDisplayData('4')">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <circle cx="7" cy="7" r="7" fill="#EF5F5F"/>
         </svg>
     </a>
 
     <!-- Jupiter Overlay -->
-    <div class="planet-overlay" id="jupiter-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Jupiter</h1>
-                    <h2>Lovis</h2>
-                    <p>Jupiter är den femte planeten från solen och är med stor marginal solsystemets största planet. Dess massa är 2,5 gånger så stor som alla de andra planeterna i solsystemet tillsammans.</p>
+    <div class="planet-overlay" id="5">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>439 264 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>750 290 000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>-140°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-140°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Europa, Ganymedes, Io, Callisto, Amalthea, Himalia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('jupiter-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet jupiter" onclick="openOverlay('jupiter-overlay')">
+    <a href="#" class="planet jupiter" onclick="openOverlayAndDisplayData('5')">
         <svg xmlns="http://www.w3.org/2000/svg" width="188" height="188" viewBox="0 0 188 188" fill="none">
             <circle cx="94" cy="94" r="94" fill="#E29468"/>
         </svg>
     </a>
 
     <!-- Saturn Overlay -->
-    <div class="planet-overlay" id="saturn-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Saturnus</h1>
-                    <h2>Saturnus</h2>
-                    <p>Saturnus är den sjätte planeten från solen och den näst största i solsystemet. Den är en gasjätte, känd sedan förhistorisk tid. Galileiska månar inkluderar Tethys, Titan, Aegir, Titan, Bergelmir, Bestla, Calypso, Daphnis, Dione, Enceladus, Epimetheus, Fenrir, Fornjot, Greip, Helene, Hyperion, Hyrrokkin, Janus, Jarnsaxa, Kari, Loge, Mimas, Pan, Pandora, Phoebe, Prometheus, Rhea, Skoll, Tarqeq, Tethys, Titan.</p>
+    <div class="planet-overlay" id="6">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>378 675 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>1 400 000 000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>-178°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-178°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Tethys, Titan, Aegir, Titan, Bergelmir, Bestla, Calypso, Daphnis, Dione, Enceladus, Epimetheus, Fenrir, Fornjot, Greip, Helene, Hyperion, Hyrrokkin, Janus, Jarnsaxa, Kari, Loge, Mimas, Pan, Pandora, Phoebe, Prometheus, Rhea, Skoll, Tarqeq, Tethys, Titan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('saturn-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet saturn" onclick="openOverlay('saturn-overlay')">
+    <a href="#" class="planet saturn" onclick="openOverlayAndDisplayData('6')">
         <svg xmlns="http://www.w3.org/2000/svg" width="145" height="144" viewBox="0 0 145 144" fill="none">
             <circle cx="72.7443" cy="72" r="72" fill="#C7AA72"/>
         </svg>
@@ -268,92 +93,22 @@
     </a>
 
     <!-- Uranus Overlay -->
-    <div class="planet-overlay" id="uranus-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Uranus</h1>
-                    <h2>Uranus</h2>
-                    <p>Uranus är den sjunde planeten från solen. Uranus är en av solsystemets fyra jätteplaneter - Jupiter, Saturnus, Uranus och Neptunus - och är känd för sin ovanliga sidvinklade rotation.</p>
+    <div class="planet-overlay" id="7">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>37 867.5 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>1 400 000 000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>-205°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-225°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Titania, Umbriel, Miranda, Oberon, Ariel, Desdemona, Puck</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('uranus-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet uranus" onclick="openOverlay('uranus-overlay')">
+    <a href="#" class="planet uranus" onclick="openOverlayAndDisplayData('7')">
         <svg xmlns="http://www.w3.org/2000/svg" width="67" height="66" viewBox="0 0 67 66" fill="none">
             <circle cx="33.7443" cy="33" r="33" fill="#C9D4F1"/>
         </svg>
     </a>
 
     <!-- Neptune Overlay -->
-    <div class="planet-overlay" id="neptune-overlay">
-        <div class="overlay-content">
-            <div class="container">
-                <div class="card">
-                    <h1>Neptunus</h1>
-                    <h2>Neptunus</h2>
-                    <p>Neptunus är den åttonde planeten från solen. Neptunus är en så kallad gasjätte, och har fått sitt namn efter havsguden Neptunus i romersk mytologi.</p>
+    <div class="planet-overlay" id="8">
 
-                    <div class="brake"></div>
-
-                    <div class="group group1">
-                        <h3>OMKRETS</h3>
-                        <p>155 600 km</p>
-                    </div>
-                    <div class="group group2">
-                        <h3>KM FRÅN SOLEN</h3>
-                        <p>4 495 000 000 km</p>
-                    </div>
-                    <div class="group group3">
-                        <h3>MAX TEMPERATUR</h3>
-                        <p>-193°C</p>
-                    </div>
-                    <div class="group group4">
-                        <h3>MIN TEMPERATUR</h3>
-                        <p>-193°C</p>
-                    </div>
-
-                    <div class="brake-2"></div>
-
-                    <div class="group group5">
-                        <h3>MÅNAR</h3>
-                        <p>Triton, Sao, Hippocamp, Proteus, Despina, Nereid, Thalassa, Galatea, Neso, Halimede, Larissa, Psamathe, Naiad, Laomedeia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="close-btn" onclick="closeOverlay('neptune-overlay')">&times;</span>
     </div>
 
-    <a href="#" class="planet neptune" onclick="openOverlay('neptune-overlay')">
+    <a href="#" class="planet neptune" onclick="openOverlayAndDisplayData('8')">
         <svg xmlns="http://www.w3.org/2000/svg" width="67" height="66" viewBox="0 0 67 66" fill="none">
             <circle cx="33.7443" cy="33" r="33" fill="#7A91A7"/>
         </svg>
@@ -364,3 +119,4 @@
 <script defer src="script.js"></script>
 </body>
 </html>
+
