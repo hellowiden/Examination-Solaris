@@ -27,7 +27,7 @@ const closeOverlay = (overlayId) => {
 // API
 
 /*
-Purpose: Fetch an API key from a specific server endpoint.
+Purpose: Fetch the API key from the specific server endpoint.
 
 How it works: Uses the fetch API to make a POST request to the server endpoint. 
 If the response is successful, it retrieves the API key from the response data 
@@ -54,7 +54,7 @@ const getApiKey = async () => {
 };
 
 /*
-Purpose: Make a GET request to a specified data endpoint using a provided API key.
+Purpose: Make a GET request to the specified data endpoint using the provided API key.
 
 How it works: Uses the fetch API to make a GET request with the provided key in the headers.
 If the response is successful, it parses the JSON data and calls the provided callback function
