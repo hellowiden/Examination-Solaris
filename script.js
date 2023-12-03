@@ -1,9 +1,24 @@
 // Overlay functionality
+
+/*
+
+Purpose: Display an overlay with the specified ID.
+
+How it works: Fetches the DOM element with the given overlayId and sets its display style property to 'flex', making it visible.
+
+*/
 const openOverlay = (overlayId) => {
   const overlay = document.getElementById(overlayId);
   overlay.style.display = 'flex';
 };
 
+/*
+
+Purpose: Hide (close) an overlay with a specified ID.
+
+How it works: Fetches the DOM element with the given overlayId and sets its display style property to 'none', making it invisible.
+
+*/
 const closeOverlay = (overlayId) => {
   const overlay = document.getElementById(overlayId);
   overlay.style.display = 'none';
@@ -11,7 +26,13 @@ const closeOverlay = (overlayId) => {
 
 // API
 
-// Function to fetch API key
+/*
+
+Purpose: Fetch an API key from a specific server endpoint.
+
+How it works: Uses the fetch API to make a POST request to the server endpoint. If the response is successful, it retrieves the API key from the response data and returns it. If the response is not successful, it throws an error.
+
+*/
 const getApiKey = async () => {
   try {
     const response = await fetch("https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys", {
@@ -31,7 +52,13 @@ const getApiKey = async () => {
   }
 };
 
-// Function to make a GET request using the provided key
+/*
+
+Purpose: Make a GET request to a specified data endpoint using a provided API key.
+
+How it works: Uses the fetch API to make a GET request with the provided key in the headers. If the response is successful, it parses the JSON data and calls the provided callback function with the data. If the response is not successful, it throws an error.
+
+*/
 const fetchDataWithKey = async (dataEndpoint, key, callback) => {
   try {
     const response = await fetch(dataEndpoint, { method: 'GET', headers: { 'x-zocom': `${key}` } });
@@ -49,7 +76,13 @@ const fetchDataWithKey = async (dataEndpoint, key, callback) => {
   }
 };
 
-// Function to open overlay and display data
+/*
+
+Purpose: Open overlay, fetch data using the API key, and display the data in the overlay.
+
+How it works: Retrieves the API key using getApiKey, then uses the key to fetch data using fetchDataWithKey. If the data is fetched successfully and is of the expected format, it opens an overlay and displays the data by calling other functions (openOverlay, filterById, displayDataInOverlay).
+
+*/
 const openOverlayAndDisplayData = async (overlayId) => {
   try {
     const apiKey = await getApiKey();
@@ -74,7 +107,13 @@ const openOverlayAndDisplayData = async (overlayId) => {
   }
 };
 
-// Function to process and print the fetched data
+/*
+
+Purpose: Process and print the fetched data.
+
+How it works: If the data is an array, it iterates through each item and logs it. If the data is not an array, it logs the data itself.
+
+*/
 const processData = (data) => {
   if (Array.isArray(data)) {
     for (const item of data) {
@@ -88,7 +127,13 @@ const processData = (data) => {
 // Initiates the process by calling the getApiKey function
 getApiKey();
 
-// Function to display data in the overlay
+/*
+
+Purpose: Display data in the overlay with the specified ID.
+
+How it works: Fetches the overlay DOM element with the provided overlayId and sets its HTML content using the createHTMLFromData function.
+
+*/
 const displayDataInOverlay = (data, overlayId) => {
   const overlay = document.getElementById(overlayId);
 
@@ -99,7 +144,13 @@ const displayDataInOverlay = (data, overlayId) => {
   }
 };
 
-// Function to filter data by ID
+/*
+
+Purpose: Filter data by ID.
+
+How it works: Uses the find method to locate an item in the data.bodies array with an ID matching the provided id. It then logs the result and returns the found item.
+
+*/
 const filterById = (data, id) => {
   const dataZ = data.bodies.find(dataZ => dataZ.id === id);
   console.log(dataZ);
@@ -110,7 +161,13 @@ const filterById = (data, id) => {
   return data.bodies[id];
 };
 
-// Function to create HTML content from the fetched data
+/*
+
+Purpose: Create HTML content from the fetched data.
+
+How it works: Uses a template literal to generate HTML content based on the properties of the data object. The resulting HTML includes the name, Latin name, description, circumference, distance, temperature, and moon information. The content is then set in the overlay.
+
+*/
 const createHTMLFromData = (data, overlayId) => `
   <div class="overlay-content">
     <div class="container">
