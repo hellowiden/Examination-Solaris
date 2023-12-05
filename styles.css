@@ -331,4 +331,5 @@ footer {
   justify-content: center;
   color: white; 
   height: 100px;
+  z-index: 99999;
 }
