@@ -148,25 +148,24 @@ const displayDataInOverlay = (data, overlayId) => {
     for (let i = 0; i < 80; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
-
-      // Adjust the opacity, duration, and delay for random blinking
       star.style.animation = `twinkle ${(Math.random() * 3) + 1}s infinite linear ${Math.random() * 3}s`;
-
       star.style.left = `${Math.random() * 100}%`;
       star.style.top = `${Math.random() * 100}%`;
-
       starsContainer.appendChild(star);
     }
 
-    overlay.appendChild(starsContainer);
+    // Create a container for the data content
+    const dataContainer = document.createElement('div');
+    dataContainer.innerHTML = createHTMLFromData(data, overlayId);
 
-    // Set the HTML content using the createHTMLFromData function
-    overlay.innerHTML += createHTMLFromData(data, overlayId);
+    // Clear the overlay and append both the stars and data containers
+    overlay.innerHTML = '';
+    overlay.appendChild(starsContainer);
+    overlay.appendChild(dataContainer);
   } else {
     console.error('Invalid data format:', data);
   }
 };
-
 
 
 /*
