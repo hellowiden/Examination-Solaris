@@ -237,11 +237,6 @@ body {
   grid-column: span 2;
 }
 
-.group {
-  display: flex;
-  flex-direction: column;
-} 
-
 .planet-overlay {
   display: none;
   position: fixed; 
@@ -267,6 +262,11 @@ body {
 .overlay-content h3 {
   grid-column: span 2;
 }
+
+.group {
+  display: flex;
+  flex-direction: column;
+} 
 
 .group1 {
   grid-row: 5;
@@ -321,16 +321,7 @@ body {
   z-index: 99999; 
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white; 
-  height: 100px;
-  z-index: 99999;
-}
-
-/**/
+/* Star Overlay */
 
 .stars-container {
   position: absolute;
@@ -355,4 +346,15 @@ footer {
   50% {
     opacity: 1;
   }
+}
+
+/* Footer section */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+  height: 100px;
+  z-index: 99999;
 }
