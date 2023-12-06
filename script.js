@@ -167,7 +167,6 @@ const displayDataInOverlay = (data, overlayId) => {
   }
 };
 
-
 /*
 Purpose: Filter data by ID.
 
