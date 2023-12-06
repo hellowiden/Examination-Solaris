@@ -175,8 +175,8 @@ with an ID matching the provided id. It then logs the result and returns the fou
 */
 
 const filterById = (data, id) => {
-  const dataZ = data.bodies.find(dataZ => dataZ.id === id);
-  console.log(dataZ);
+  const foundItem = data.bodies.find(foundItem => foundItem.id === id);
+  console.log(foundItem);
 
   console.log(data.bodies);
   console.log(data.bodies[0]);
