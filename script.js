@@ -131,10 +131,12 @@ const processData = (data) => {
 getApiKey();
 
 /*
-Purpose: Display data in the overlay with the specified ID.
+Objective: The code is designed to showcase data in an overlay with the specified ID.
 
-How it works: Fetches the overlay DOM element with the provided overlayId
-and sets its HTML content using the createHTMLFromData function.
+Functionality: Retrieves the overlay DOM element using the provided overlayId
+and updates its HTML content using the createHTMLFromData function.
+
+Details: If the data is a valid object, the function enhances the overlay presentation by adding animated stars. It creates a stars container, generates star elements with random positions and twinkle animations, and combines them with the data content inside the overlay. In case of an invalid data format, an error message is logged.
 */
 
 const displayDataInOverlay = (data, overlayId) => {
@@ -168,10 +170,10 @@ const displayDataInOverlay = (data, overlayId) => {
 };
 
 /*
-Purpose: Filter data by ID.
+Objective: The code below aims to filter data based on a specified ID.
 
-How it works: Uses the find method to locate an item in the data.bodies array
-with an ID matching the provided id. It then logs the result and returns the found item.
+Functionality: Utilizes the find method to search for an item in the data.bodies array
+that has an ID matching the provided id. The identified item is then logged, and the function returns the found item.
 */
 
 const filterById = (data, id) => {
