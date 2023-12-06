@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One:wght@400&display=swap');
+
 :root {
   --h1-color: #FFF;
-  --h1-font-family: 'Secular One', Arial;
+  --h1-font-family: 'Secular One';
   --h1-font-size: 60px;
   --h1-font-style: normal;
   --h1-font-weight: 800;
@@ -16,7 +19,7 @@
   --h2-letter-spacing: 14.4px;
 
   --h3-color: #FFF;
-  --h3-font-family: 'Secular One', Arial;
+  --h3-font-family: 'Secular One';
   --h3-font-size: 18px;
   --h3-font-style: normal;
   --h3-font-weight: 400;
@@ -24,7 +27,7 @@
   --h3-letter-spacing: 1.62px;
 
   --p-color: rgba(255, 255, 255, 1);
-  --p-font-family: 'Roboto Condensed', Arial;
+  --p-font-family: 'Roboto Condensed';
   --p-font-size: 18px;
   --p-font-style: normal;
   --p-font-weight: 100;
