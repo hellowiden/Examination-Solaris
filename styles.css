@@ -229,9 +229,9 @@ body {
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
   padding: 20px;
   border-radius: 6px;
+  gap: 20px;
 }
 
 .card h1,
@@ -264,6 +264,7 @@ body {
 .overlay-content h2,
 .overlay-content h3 {
   grid-column: span 2;
+  margin-bottom: 10px;
 }
 
 .group {
