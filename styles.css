@@ -344,7 +344,7 @@ footer {
   width: 2px;
   height: 2px;
   background-color: white;
-  animation: twinkle 1s infinite;
+  animation: twinkle 0.5s infinite;
   pointer-events: none;
 }
 
