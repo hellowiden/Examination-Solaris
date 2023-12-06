@@ -141,11 +141,33 @@ const displayDataInOverlay = (data, overlayId) => {
   const overlay = document.getElementById(overlayId);
 
   if (data && typeof data === 'object') {
-    overlay.innerHTML = createHTMLFromData(data, overlayId);
+    // Add stars to the overlay
+    const starsContainer = document.createElement('div');
+    starsContainer.classList.add('stars-container');
+
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+
+      // Adjust the opacity, duration, and delay for random blinking
+      star.style.animation = `twinkle ${(Math.random() * 3) + 1}s infinite linear ${Math.random() * 3}s`;
+
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+
+      starsContainer.appendChild(star);
+    }
+
+    overlay.appendChild(starsContainer);
+
+    // Set the HTML content using the createHTMLFromData function
+    overlay.innerHTML += createHTMLFromData(data, overlayId);
   } else {
     console.error('Invalid data format:', data);
   }
 };
+
+
 
 /*
 Purpose: Filter data by ID.
