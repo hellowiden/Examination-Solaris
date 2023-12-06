@@ -86,7 +86,7 @@ fetchDataWithKey. If the data is fetched successfully and is of the expected for
 and displays the data by calling other functions (openOverlay, filterById, displayDataInOverlay).
 */
 
-const openOverlayAndDisplayData = async (overlayId) => {
+const displayOverlayData = async (overlayId) => {
   try {
     const apiKey = await getApiKey();
 
